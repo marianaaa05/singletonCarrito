@@ -9,7 +9,7 @@ const CarritoSingleton = (function () {
             },
             obtenerProductos: function () {
                 return this.productos;
-            }
+            },
         };
     }
 
@@ -19,20 +19,23 @@ const CarritoSingleton = (function () {
                 instancia = crearCarrito();
             }
             return instancia;
-        }
+        },
     };
 })();
 
 //agregar y mostrar productos
 
-function agregarAlCarrito(producto) {
+function agregarAlCarrito() {
     let input = document.getElementById("producto");
     let nombreProducto = input.value.trim();
 
     if (nombreProducto !== "") {
-        let carrito = CarritoSingleton.obtenerInstancia();
-        carrito.agregarProducto(nombreProducto);
+        let carrito = CarritoSingleton.obtenerInstancia(); // obtiene la única instancia del carrito
+        carrito.agregarProducto(nombreProducto); // agrega a la lista
+        // li muestra el producto agregado
+        let lista = document.getElementById("listaCarrito");
+        lista.innerHTML += `<li>${nombreProducto}</li>`; //
+    
         input.value = "";
-        mostrarProductos(carrito.obtenerProductos());
-    }
+      }
 }

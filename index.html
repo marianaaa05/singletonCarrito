@@ -4,18 +4,18 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Carrito de compras</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-  <div class="contenedor">
+  <div class="container">
     <h1>Carrito de compras</h1>
     <img src = "carrito-de-supermercado.png" alt="carrito">
     <input type="text" id="producto" placeholder="Ingrese el nombre del producto">
-    <button onclick="agregarAlCarrito(this)">Agregar</button>
+    <button onclick="agregarAlCarrito()">Agregar</button>
 
     <h3>Productos en el carrito:</h3>
-    <ul id = "carrito"\>
+    <ul id = "listaCarrito"></ul>
   </div>
 
   <script src="CarritoSingleton.js"></script>
